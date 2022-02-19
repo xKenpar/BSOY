@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntractableObject : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
     Rigidbody2D m_parentRigidbody;
     Camera m_camera;

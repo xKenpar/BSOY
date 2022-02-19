@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2107972757353517482}
   - component: {fileID: -8094560480350045980}
   m_Layer: 7
-  m_Name: Intractable
-  m_TagString: Untagged
+  m_Name: Interactable
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

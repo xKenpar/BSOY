@@ -14,15 +14,15 @@ public class MouseChecker : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            RaycastHit2D hit = Physics2D.Raycast(m_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Default"));
+            RaycastHit2D hit = Physics2D.Raycast(m_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Interactable"));
 
             if (hit) {
                 GameObject hittedObject = hit.collider.gameObject;
 
-                if (hittedObject.CompareTag("Intractable")) {
+                if (hittedObject.CompareTag("Interactable")) {
                     m_newHittedObject = hittedObject;
 
-                    Transform intractable = hittedObject.transform.Find("Intractable");
+                    Transform intractable = hittedObject.transform.Find("Interactable");
                     if (intractable){
                         intractable.gameObject.SetActive(true);
                     }
@@ -36,7 +36,7 @@ public class MouseChecker : MonoBehaviour
     void CheckHittedObjects() {
         if (m_lastHittedObject) {
             if (!ReferenceEquals(m_lastHittedObject, m_newHittedObject)) {
-                m_lastHittedObject.transform.Find("Intractable").gameObject.SetActive(false);
+                m_lastHittedObject.transform.Find("Interactable").gameObject.SetActive(false);
             }
             m_lastHittedObject = m_newHittedObject;
         } else {
