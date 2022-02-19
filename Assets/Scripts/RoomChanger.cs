@@ -14,8 +14,11 @@ public class RoomChanger : MonoBehaviour
 {
     [SerializeField] CinemachineBrain m_cameraBrain;
     [SerializeField] RoomController m_currentRoom;
-    [SerializeField] float dampingTime;
+    float dampingTime;
 
+    void Start() {
+        
+    }
     public void ChangeRoom(Direction direction) {
         switch (direction) {
             case Direction.LEFT:
