@@ -21,7 +21,7 @@ public class PowerManager : MonoBehaviour
     }
 
     public void UpdatePower(){
-        bool temp = true;
+        bool temp = Mode ? false : true;
         foreach (PowerSource source in Sources){
             if (Mode) temp = temp || source.m_powered;
             else temp = temp && source.m_powered;
