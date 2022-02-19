@@ -12,7 +12,9 @@ public enum Direction {
 
 public class RoomChanger : MonoBehaviour
 {
+    [SerializeField] CinemachineBrain m_cameraBrain;
     [SerializeField] RoomController m_currentRoom;
+    [SerializeField] float dampingTime;
 
     public void ChangeRoom(Direction direction) {
         switch (direction) {
