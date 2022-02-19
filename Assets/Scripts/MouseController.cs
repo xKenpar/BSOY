@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    Rigidbody2D m_rigidbody;
+    
+    public static Vector2 MousePosition;
+
+    void Start() {
+        m_rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        m_rigidbody.MovePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        MousePosition = transform.position;
     }
 }

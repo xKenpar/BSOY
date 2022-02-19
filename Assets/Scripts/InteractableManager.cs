@@ -12,7 +12,7 @@ public class InteractableManager : MonoBehaviour
     private TargetJoint2D m_targetJoint;
 
     void Update () {
-        Vector2 worldPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        Vector2 worldPos = MouseController.MousePosition;
 
         if (Input.GetMouseButtonDown (0)) {
             Collider2D collider = Physics2D.OverlapPoint (worldPos, m_DragLayers);
