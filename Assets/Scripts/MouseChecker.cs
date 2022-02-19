@@ -15,11 +15,12 @@ public class MouseChecker : MonoBehaviour
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D hit = Physics2D.Raycast(m_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Interactable"));
-
+            
             if (hit) {
                 GameObject hittedObject = hit.collider.gameObject;
 
                 if (hittedObject.CompareTag("Interactable")) {
+                    Debug.Log("ALO");
                     m_newHittedObject = hittedObject;
 
                     Transform intractable = hittedObject.transform.Find("Interactable");
