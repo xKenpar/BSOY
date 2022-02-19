@@ -1,0 +1,14 @@
+Power Sources : 
+
+Create a Gameobject
+Add PowerSource Component
+Add any PowerSource typed Component (Pressure Plate, Motion Sensor Etc.)
+
+PowerManager:
+
+Create a Gameobject
+Add PowerManager Component
+Add any PoweredDevice typed Component (Pressure Plate, Motion Sensor Etc.)
+Add PoweredDevice Component into PowerManager devices
+Add PowerSource Components into PowerManager sources
+Modify PowerManager Mode : AND, OR

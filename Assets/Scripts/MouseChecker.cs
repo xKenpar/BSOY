@@ -20,7 +20,6 @@ public class MouseChecker : MonoBehaviour
                 GameObject hittedObject = hit.collider.gameObject;
 
                 if (hittedObject.CompareTag("Interactable")) {
-                    Debug.Log("ALO");
                     m_newHittedObject = hittedObject;
 
                     Transform intractable = hittedObject.transform.Find("Interactable");
