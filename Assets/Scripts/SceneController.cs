@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
-    [SerializeField] int currentLevel;
+    public int currentLevel = 1;
     int maxLevel = 5;
 
     static SceneController instance = null;
@@ -28,5 +28,14 @@ public class SceneController : MonoBehaviour
 
     public void LoadLevel(string name) {
         SceneManager.LoadScene(name);
+    }
+
+    public void Save() {
+        PlayerPrefs.SetInt("LevelNumber", currentLevel);
+        PlayerPrefs.Save();
+    }
+
+    public int Load() {
+        return PlayerPrefs.GetInt("LevelNumber", 1);
     }
 }

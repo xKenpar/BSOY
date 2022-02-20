@@ -16,7 +16,7 @@ public class EndingDoor : PoweredDevice {
     }
     void Start() {
         m_character = GameObject.FindGameObjectWithTag("Character");
-
+        if (SceneController.Instance.currentLevel > SceneController.Instance.Load()) SceneController.Instance.Save();
         if (m_powered) PowerOn();
     }
 
