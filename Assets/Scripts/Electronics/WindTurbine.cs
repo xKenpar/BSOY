@@ -7,7 +7,13 @@ public class WindTurbine : PoweredDevice
     [SerializeField] BoxCollider2D m_triggerCollider;
     [SerializeField] bool m_direction = true;
     [SerializeField] float m_power;
+
+    ParticleSystem m_particle;
     List<Rigidbody2D> m_bodies = new List<Rigidbody2D>();
+
+    void Start() {
+        m_particle = GetComponentInChildren<ParticleSystem>();
+    }
     void Update() {
         if (!m_powered) return;
 
@@ -31,10 +37,12 @@ public class WindTurbine : PoweredDevice
 
     public override void PowerOn() {
         m_powered = true;
+        m_particle.Play();
     }
 
     public override void PowerOff() {
         m_powered = false;
+        m_particle.Stop();
     }
 
 }
