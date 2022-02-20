@@ -16,6 +16,8 @@ public class EndingDoor : PoweredDevice {
     }
     void Start() {
         m_character = GameObject.FindGameObjectWithTag("Character");
+
+        if (m_powered) PowerOn();
     }
 
     public override void PowerOn() {
