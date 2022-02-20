@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractableManager : MonoBehaviour
 {
     public LayerMask m_DragLayers;
+    public LayerMask m_CharacterLayers;
 
     [SerializeField] float m_damping = 1.0f;
     [SerializeField] float m_frequency = 5.0f;
@@ -16,8 +17,16 @@ public class InteractableManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown (0)) {
             Collider2D collider = Physics2D.OverlapPoint (worldPos, m_DragLayers);
-            if (!collider)
-                return;
+            if (!collider) {
+                if (EndingDoor.EndingOpened) {
+                    collider = Physics2D.OverlapPoint(worldPos, m_CharacterLayers);
+
+                    if (!collider) return;
+                }
+                else
+                    return;
+            }
+                
 
             Rigidbody2D body = collider.attachedRigidbody;
             if (!body)

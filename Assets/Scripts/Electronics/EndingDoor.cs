@@ -3,37 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EndingDoor : PoweredDevice {
-    BoxCollider2D m_collider;
-    SpriteRenderer m_spriteRenderer;
+    public static bool EndingOpened = false;
+    [SerializeField] float m_delay;
+    
+    GameObject m_character;
 
-    float m_remainingTime = 2f;
+    IEnumerator TriggerEnding(float delay) {
+        //efektler falan iste
+        yield return new WaitForSeconds(delay);
+        SceneController.Instance.NextLevel();
+
+    }
     void Start() {
-        m_collider = GetComponent<BoxCollider2D>();
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
-        if (m_powered) {
-            PowerOn();
-        }
+        m_character = GameObject.FindGameObjectWithTag("Character");
     }
 
-    void Update() {
-        if (m_powered) {
-            m_remainingTime -= Time.deltaTime;
-            if (m_remainingTime < 0) {
-                SceneController.Instance.NextLevel();
-            }
-        }else {
-            m_remainingTime = 2;
-        }
-
-    }
     public override void PowerOn() {
         m_powered = true;
-        m_collider.enabled = false;
-        m_spriteRenderer.enabled = false;
+        EndingOpened = true;
     }
 
     public override void PowerOff() {
         m_powered = false;
-        m_spriteRenderer.enabled = true;
+        EndingOpened = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (!collision.CompareTag("Character")) return;
+
+
+        StartCoroutine(TriggerEnding(m_delay));
     }
 }
