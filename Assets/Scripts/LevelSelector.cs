@@ -20,7 +20,7 @@ public class LevelSelector : PoweredDevice
         }
 
         yield return new WaitForSeconds(delay);
-
+        EndingOpened = false;
         SceneController.Instance.LoadLevel("Level" + index);
     }
     void Start() {

@@ -13,6 +13,9 @@ public class InteractableManager : MonoBehaviour
     [SerializeField] Sprite m_clicked;
     private TargetJoint2D m_targetJoint;
 
+    void Start() {
+        EndingDoor.EndingOpened = false;
+    }
     void Update () {
         Vector2 worldPos = MouseController.MousePosition;
         if(MouseController.m_spriteRenderer == null)
