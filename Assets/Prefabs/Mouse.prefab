@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  CursorParticle: {fileID: 4065780316005502064, guid: aa051234558051c468ad0751849ef39e, type: 3}
 --- !u!50 &8879661743579107475
 Rigidbody2D:
   serializedVersion: 4

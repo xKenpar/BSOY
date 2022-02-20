@@ -20,6 +20,9 @@ public class MouseController : MonoBehaviour
 
     Vector2 m_cursorSetPoint;
 
+    [SerializeField] ParticleSystem CursorParticle;
+    float m_cursorParticleTimer = 0;
+
     void Start() {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = false;
@@ -48,8 +51,10 @@ public class MouseController : MonoBehaviour
         SetCursorPos((int)m_cursorSetPoint.x,(int)m_cursorSetPoint.y);
 #endif
         MousePosition = transform.position;
-    }
 
+        if(m_cursorParticleTimer > 0)
+            m_cursorParticleTimer -= Time.deltaTime;
+    }
     void OnDisable() {
         Cursor.visible = true;
         m_spriteRenderer.enabled = false;
@@ -60,5 +65,15 @@ public class MouseController : MonoBehaviour
         Cursor.visible = false;
         m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         m_spriteRenderer.enabled = true;
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.relativeVelocity.magnitude > 2){
+            if(m_cursorParticleTimer <= 0){
+                Instantiate(CursorParticle,collision.contacts[0].point,Quaternion.identity);
+                m_cursorParticleTimer = .2f;
+            }
+        }
     }
 }
