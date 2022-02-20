@@ -13,12 +13,10 @@ public class MouseController : MonoBehaviour
 
     [SerializeField] Transform spawnPoint;
     public static Vector2 MousePosition;
-    [SerializeField] float sensitivityX = 15F;
-    [SerializeField] float sensitivityY = 15F;
 
     Camera m_mainCamera;
     Rigidbody2D m_rigidbody;
-    SpriteRenderer m_spriteRenderer;
+    public static SpriteRenderer m_spriteRenderer;
 
     Vector2 m_cursorSetPoint;
 
@@ -27,7 +25,7 @@ public class MouseController : MonoBehaviour
         Cursor.visible = false;
 
         m_rigidbody = GetComponent<Rigidbody2D>();
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if(spawnPoint)
             transform.position = spawnPoint.position;
 
@@ -60,7 +58,7 @@ public class MouseController : MonoBehaviour
 
     void OnEnable() {
         Cursor.visible = false;
-        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         m_spriteRenderer.enabled = true;
     }
 }

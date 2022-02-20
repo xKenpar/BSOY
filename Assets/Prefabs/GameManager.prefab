@@ -67,6 +67,8 @@ MonoBehaviour:
     m_Bits: 64
   m_damping: 1
   m_frequency: 5
+  m_idle: {fileID: 1024139073827670984, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
+  m_clicked: {fileID: -6302563881008770516, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
 --- !u!114 &5907115230613717064
 MonoBehaviour:
   m_ObjectHideFlags: 0

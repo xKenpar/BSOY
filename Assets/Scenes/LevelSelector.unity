@@ -662,7 +662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5907115230613717061, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717061, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1287,13 +1287,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mouse
       objectReference: {fileID: 0}
+    - target: {fileID: 8879661743579107484, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1024139073827670984, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
+    - target: {fileID: 8879661743579107484, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879661743579107484, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879661743579107484, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8879661743579107485, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 650405088}
     - target: {fileID: 8879661743579107487, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8879661743579107487, guid: e28acdeb6ebc09a4c912067273cad59f, type: 3}
       propertyPath: m_LocalPosition.x
