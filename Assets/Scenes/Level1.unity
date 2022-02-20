@@ -168,7 +168,7 @@ MonoBehaviour:
     Bize de zorluk \xE7\u0131kartma hadi l\xFCtfen."
   - "<color=#006400>Ya karde\u015F ben yerimden mutluyum siz beni neden zorluyorsunuz?"
   - "San\u0131r\u0131m i\u015F sana d\xFC\u015Ft\xFC oyuncu. \u015Eunu tutup yerinden
-    kald\u0131rsana.<trigger=1>"
+    kald\u0131rsana.<trigger=0>"
   TextTriggers:
   - m_PersistentCalls:
       m_Calls:
@@ -700,12 +700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492cc0631e19b414b81916449c8f52fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftRoom: {fileID: 0}
-  RightRoom: {fileID: 0}
-  UpRoom: {fileID: 0}
-  DownRoom: {fileID: 0}
-  VirtualCam: {fileID: 2043858384}
-  RoomObjects: {fileID: 1624749992}
 --- !u!4 &770534063
 Transform:
   m_ObjectHideFlags: 0
