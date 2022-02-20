@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 public class LevelSelector : PoweredDevice
 {
     public static bool EndingOpened = false;
-    [SerializeField] Transform platesParent;
+    [SerializeField] Transform PlatesParent;
+    [SerializeField] Transform DoorsParent;
     [SerializeField] float m_delay;
 
     GameObject m_character;
@@ -13,7 +15,7 @@ public class LevelSelector : PoweredDevice
     IEnumerator TriggerEnding(float delay) {
         //efektler falan iste
         string index = "1";
-        foreach (Transform t in platesParent) {
+        foreach (Transform t in PlatesParent) {
             if (t.GetComponent<PowerSource>().m_powered) index = t.name;
         }
 
@@ -23,7 +25,7 @@ public class LevelSelector : PoweredDevice
     }
     void Start() {
         m_character = GameObject.FindGameObjectWithTag("Character");
-
+        SetupDoors();
         if (m_powered) PowerOn();
     }
 
@@ -40,7 +42,18 @@ public class LevelSelector : PoweredDevice
     void OnTriggerEnter2D(Collider2D collision) {
         if (!collision.CompareTag("Character")) return;
 
-
         StartCoroutine(TriggerEnding(m_delay));
+    }
+
+    void SetupDoors() {
+        int currentLevel = SceneController.Instance.Load();
+
+        foreach (Transform t in DoorsParent) {
+            int index = Int32.Parse(t.name);
+
+            if (currentLevel == index) break;
+
+            Destroy(t.gameObject);
+        }
     }
 }
