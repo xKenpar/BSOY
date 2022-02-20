@@ -18,7 +18,7 @@ public class InteractableManager : MonoBehaviour
         if (Input.GetMouseButtonDown (0)) {
             Collider2D collider = Physics2D.OverlapPoint (worldPos, m_DragLayers);
             if (!collider) {
-                if (EndingDoor.EndingOpened) {
+                if (EndingDoor.EndingOpened || LevelSelector.EndingOpened) {
                     collider = Physics2D.OverlapPoint(worldPos, m_CharacterLayers);
 
                     if (!collider) return;

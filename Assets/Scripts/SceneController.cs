@@ -26,7 +26,7 @@ public class SceneController : MonoBehaviour
         LoadLevel("Level" + (currentLevel + 1));
     }
 
-    void LoadLevel(string name) {
+    public void LoadLevel(string name) {
         SceneManager.LoadScene(name);
     }
 }
