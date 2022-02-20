@@ -7,19 +7,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 
-public enum EmoteEnum { neutral, happy, mad, sad, suprised, tired };
-
-public class TextMessage 
-{
-    public TextMessage(string character, string text) {
-        Character = character;
-        Text = text;
-    }
-
-    public string Character;
-    public string Text;
-}  
-
 public class TextBoxManager : MonoBehaviour
 {
     public UnityEvent OnTextStart = new UnityEvent();
@@ -45,15 +32,12 @@ public class TextBoxManager : MonoBehaviour
     }
     private static TextBoxManager instance;
 
-    Queue<TextMessage> m_textMessages = new Queue<TextMessage>();
+    Queue<string> m_textMessages = new Queue<string>();
     bool m_isTextActive = false;
 
     string m_textIndex;
 
-    Dictionary<string,Sprite[]> m_emotes;
-    Dictionary<string,EmoteEnum> m_emoteStringToEnum;
-
-    TextMessage m_currentTextMessage;
+    string m_currentTextMessage;
 
     int m_characterCount = 0;
     float m_startTime = 0;    
@@ -65,7 +49,7 @@ public class TextBoxManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
     } 
 
-    public void SetText(TextMessage text, string textIndex) {
+    public void SetText(string text, string textIndex) {
         m_textIndex = textIndex; 
         m_textMessages.Enqueue(text);
 
@@ -73,9 +57,9 @@ public class TextBoxManager : MonoBehaviour
             StartCoroutine(nameof(ReadText));
     }
 
-    public void SetText(List<TextMessage> textList, string textIndex) {
+    public void SetText(List<string> textList, string textIndex) {
         m_textIndex = textIndex;
-        foreach(TextMessage text in textList)
+        foreach(string text in textList)
             m_textMessages.Enqueue(text);
         
         if(!m_isTextActive)
@@ -99,7 +83,7 @@ public class TextBoxManager : MonoBehaviour
 
         m_currentTextMessage = m_textMessages.Dequeue();
 
-        string[] parsedText = m_currentTextMessage.Text.Split('<', '>');
+        string[] parsedText = m_currentTextMessage.Split('<', '>');
         
         string text = "";
         m_characterCount = 0;
