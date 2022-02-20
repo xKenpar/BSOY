@@ -37,14 +37,12 @@ public class PowerManager : MonoBehaviour
     }
 
     void PowerOn(){
-        Debug.Log("PowerManager PowerOn");
         foreach (PoweredDevice device in Devices){
             if(!device.m_powered) device.PowerOn();
         }
     }
 
     void PowerOff() {
-        Debug.Log("PowerOff");
         foreach (PoweredDevice device in Devices) {
             if (device.m_powered) device.PowerOff();
         }
