@@ -129,8 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  sensitivityX: 15
-  sensitivityY: 15
 --- !u!50 &8879661743579107475
 Rigidbody2D:
   serializedVersion: 4
@@ -169,8 +167,12 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.3859684, y: -0.55513215}
-  - {x: -0.26726454, y: -0.10947657}
-  - {x: -0.06689897, y: 0.22429585}
+  - {x: -0.13106856, y: -0.18910716}
+  - {x: -0.15480494, y: -0.099405564}
+  - {x: -0.14594588, y: 0.09261817}
+  - {x: -0.12283468, y: 0.1311172}
+  - {x: -0.058506474, y: 0.12694275}
+  - {x: 0.095864, y: 0.12216648}
   - {x: 0.63936067, y: -0.21886301}
   - {x: 0.39906693, y: -0.5663471}
   m_AdjacentStartPoint: {x: 0, y: 0}
