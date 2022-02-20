@@ -15,6 +15,8 @@ public class InteractableManager : MonoBehaviour
 
     void Update () {
         Vector2 worldPos = MouseController.MousePosition;
+        if(MouseController.m_spriteRenderer == null)
+            return;
 
         if (Input.GetMouseButtonDown (0)) {
             Collider2D collider = Physics2D.OverlapPoint (worldPos, m_DragLayers);
