@@ -5,16 +5,24 @@ using UnityEngine;
 [RequireComponent(typeof(PowerSource))]
 public class PressurePlate : MonoBehaviour 
 {
+    [SerializeField] Sprite m_unPressed;
+    [SerializeField] Sprite m_pressed;
+
+    SpriteRenderer m_renderer;
     PowerSource m_powerSource;
     int m_triggerCount = 0;
     
     void Start() {
         m_powerSource = GetComponent<PowerSource>();
+        m_renderer = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D collision) {
         if (!collision.CompareTag("Interactable") || collision.isTrigger) return;
 
-        if (m_triggerCount == 0) m_powerSource.PowerOn();
+        if (m_triggerCount == 0) {
+            m_powerSource.PowerOn();
+            m_renderer.sprite = m_pressed;
+        }
         m_triggerCount++;
     }
 
@@ -22,7 +30,10 @@ public class PressurePlate : MonoBehaviour
 
         if (!collision.CompareTag("Interactable") || collision.isTrigger) return;
 
-        if (m_triggerCount == 1) m_powerSource.PowerOff();
+        if (m_triggerCount == 1) {
+            m_powerSource.PowerOff();
+            m_renderer.sprite = m_unPressed;
+        }
         m_triggerCount--;
     }
 }
