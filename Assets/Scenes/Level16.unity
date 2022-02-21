@@ -5201,7 +5201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717064, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: currentLevel
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717065, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: m_Name
@@ -5818,7 +5818,7 @@ MonoBehaviour:
   - <speed=1>...
   - <speed=15> Bu ne?
   - "<char>Siz \u015Faka m\u0131s\u0131n\u0131z?"
-  - "Mouseunun neden orada oldu\u011Fuyla alakal\u0131 hi\xE7bir fikrim yok."
+  - "Farenin neden orada oldu\u011Funu biliyor musun?"
   - "<char>Ee ne yani ben burda oturacak m\u0131y\u0131m sadece?"
   - "San\u0131r\u0131m \xF6yle yapacaks\u0131n. "
   - "<char>Pff. Bunun i\xE7in zaman\u0131m yok!<trigger=0>"

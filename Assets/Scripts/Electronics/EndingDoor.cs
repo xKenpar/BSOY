@@ -12,11 +12,9 @@ public class EndingDoor : PoweredDevice {
         //efektler falan iste
         yield return new WaitForSeconds(delay);
         SceneController.Instance.NextLevel();
-
     }
     void Start() {
         m_character = GameObject.FindGameObjectWithTag("Character");
-        if (SceneController.Instance.currentLevel > SceneController.Instance.Load()) SceneController.Instance.Save();
         if (m_powered) PowerOn();
     }
 

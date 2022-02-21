@@ -18,25 +18,24 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    void Update() {
-            
+    void Start() {
+        Debug.Log(PlayerPrefs.GetInt("LevelNumber", 1));    
     }
 
     public void NextLevel(){
+        if(PlayerPrefs.GetInt("LevelNumber",1) < currentLevel + 1){
+            PlayerPrefs.SetInt("LevelNumber", currentLevel + 1);
+            PlayerPrefs.Save();
+        }
+
         if(currentLevel == maxLevel) {
             LoadLevel("levelSelector");
-        }else
-
-        LoadLevel("Level" + (currentLevel + 1));
+        } else 
+            LoadLevel("Level" + (currentLevel + 1));
     }
 
     public void LoadLevel(string name) {
         SceneManager.LoadScene(name);
-    }
-
-    public void Save() {
-        PlayerPrefs.SetInt("LevelNumber", currentLevel);
-        PlayerPrefs.Save();
     }
 
     public int Load() {
