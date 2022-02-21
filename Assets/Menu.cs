@@ -2,49 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] GameObject PauseMenuUI;
-    [SerializeField] MouseController mouseController;
-
     [SerializeField] float SlowdownFactor = 0.05f;
     public static bool GameRunning = true;
 
+    [SerializeField] Text Continue31;
+
     void Start() {
-        SlowDownTime();    
-        
+        if(PlayerPrefs.GetInt("LevelNumber", 1) == 1){
+            Continue31.color = new Color(0,0,0,.5f);
+        }
     }
 
     public void NewGame() {
-        RestoreTime();
         SceneManager.LoadScene("Level1");
     }
 
     public void Continue() {
-        RestoreTime();
-        SceneManager.LoadScene("LevelSelector");
+        if(PlayerPrefs.GetInt("LevelNumber", 1) != 1)
+            SceneManager.LoadScene("LevelSelector");
     }
 
     public void Retry() {
-        RestoreTime();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void SlowDownTime() {
-        if(mouseController == null)
-            mouseController = FindObjectOfType(typeof(MouseController)) as MouseController;
-        Time.timeScale = SlowdownFactor;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
-        GameRunning = false;
-        mouseController.enabled = false;
-    }
-    void RestoreTime() {
-        if(mouseController == null)
-            mouseController = FindObjectOfType(typeof(MouseController)) as MouseController;
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = .02f;
-        GameRunning = true;
-        mouseController.enabled = true;
+    public void QuitGame() {
+        Application.Quit();
     }
 }
