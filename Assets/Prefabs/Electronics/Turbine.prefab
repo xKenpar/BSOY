@@ -104,7 +104,6 @@ MonoBehaviour:
   m_triggerCollider: {fileID: 6257264712332325509}
   m_direction: 1
   m_power: 10
-  WindSFX: {fileID: 0}
 --- !u!114 &6257264712332325508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +178,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8094aff2d0d16754b9358eb733ba6f48, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.717
+  m_Volume: 0.397
   m_Pitch: 1
   Loop: 1
   Mute: 0
