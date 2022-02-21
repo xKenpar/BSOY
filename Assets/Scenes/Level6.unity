@@ -933,9 +933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts:
-  - "<char>Direk yukardaki kutuyu al\u0131p buraya getir. Bu kadar basit bir b\xF6l\xFCm
-    de koymazs\u0131n\u0131z."
-  - "Duvarlar\u0131n i\xE7inden bi\u015Feyleri alabildi\u011Fini d\xFC\u015F\xFCnm\xFCyorum."
+  - "<char>Bu b\xF6l\xFCm direk imkans\u0131z. Hadi yat\u0131p uyuyal\u0131m"
+  - "Bunu s\xF6ylemek istemezdim ama<speed=1>...<speed=15>sa\u011F t\u0131klayarak
+    yerdeki butonlara basabilirsin"
   TextTriggers: []
 --- !u!4 &1022412019
 Transform:

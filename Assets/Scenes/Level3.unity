@@ -1657,10 +1657,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts:
-  - "E\u011Ferk s\u0131k\u0131\u015F\u0131rsan 'R' tu\u015Funa bas\u0131p tekrar
-    ba\u015Flayabilirsin"
-  - "<char>Ba\u015Ftan ba\u015Flamamaya \xE7al\u0131\u015F. H\u0131zl\u0131ca bitir
-    b\xF6l\xFCmleri de gidelim burdan."
+  - "E\u011Ferk s\u0131k\u0131\u015F\u0131rsan 'Esc' tu\u015Funa bas\u0131p men\xFCden
+    tekrar ba\u015Flayabilirsin"
+  - "<char>Men\xFCy\xFC a\xE7ma bence. H\u0131zl\u0131ca b\xF6l\xFCmleri bitir de
+    gidelim burdan."
   TextTriggers: []
 --- !u!4 &83027083
 Transform:

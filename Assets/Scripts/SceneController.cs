@@ -18,6 +18,10 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    void Update() {
+            
+    }
+
     public void NextLevel(){
         if(currentLevel == maxLevel) {
             //Load Menu

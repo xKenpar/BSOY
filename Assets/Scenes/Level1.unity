@@ -154,14 +154,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Texts:
   - "S\xFCper g\xFC\xE7l\xFC bir kahraman olarak d\xFCnyay\u0131 kurtarmadan \xF6nce
-    seni sava\u015Fa haz\u0131rlayaca\u011F\u0131z"
+    seni sava\u015Fa haz\u0131rlayaca\u011F\u0131z."
   - "S\xFCper g\xFCc\xFCn ise <speed=1>...<speed=15> Tembellik?"
   - "San\u0131r\u0131m bir hata olmu\u015F? Herneyse biz oyunumuza ba\u015Flayal\u0131m."
   - "WASD tu\u015Flar\u0131yla hareket edebilirsin. Kutuyu ittirerek sonraki odaya
-    ilerle"
+    ilerle."
   - <speed=1>...
   - "Bir hata m\u0131 oldu. Neden hareket edemiyorsun. Hemen bir kontrol ediyorum."
-  - "<char>Kim kalk\u0131cak \u015Fimdi bunun i\xE7in"
+  - "<char>Kim kalk\u0131cak \u015Fimdi bunun i\xE7in."
   - Lan!?
   - "H\u0131\u0131. <i>Tembellik</i>"
   - "Ee nas\u0131l olacak bu i\u015F? Sadece kalk\u0131p iki saniye yan tarafa y\xFCr\xFCyeceksin.
