@@ -60,8 +60,8 @@ MonoBehaviour:
       m_Calls: []
   TextBox: {fileID: 3661987515756414225}
   TextBoxImage: {fileID: 6681452223659967858}
-  NarratorTextBG: {fileID: 0}
-  CharTextBG: {fileID: 0}
+  NarratorTextBG: {fileID: 21300000, guid: b6d06b94df350c948940b34e0f2f5ea8, type: 3}
+  CharTextBG: {fileID: 21300000, guid: f289ebf42be9b264fbc51c6dac037d7a, type: 3}
   TextMesh: {fileID: 3640381765390729632}
 --- !u!1 &2351874023404262519
 GameObject:
@@ -209,8 +209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: -800, y: 200}
+  m_AnchoredPosition: {x: 76.528, y: -150}
+  m_SizeDelta: {x: -1309.648, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5996352779425589279
 CanvasRenderer:
