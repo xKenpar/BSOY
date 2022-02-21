@@ -36,6 +36,9 @@ public class TextBoxManager : MonoBehaviour
     private static TextBoxManager instance;
 
     Queue<string> m_textMessages = new Queue<string>();
+    public bool IsTextActive {
+        get {return m_isTextActive;}
+    }
     bool m_isTextActive = false;
 
     string m_textIndex;

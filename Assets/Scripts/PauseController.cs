@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
     [SerializeField] GameObject PauseMenuUI;
-    [SerializeField] MouseController MController;
+    [SerializeField] MouseController mouseController;
 
     [SerializeField] float SlowdownFactor = 0.05f;
     public static bool GameRunning = true;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !TextBoxManager.Instance.IsTextActive) {
             if (GameRunning) {
                 Pause();
             }
@@ -24,17 +24,38 @@ public class PauseController : MonoBehaviour
 
     public void Pause() {
         PauseMenuUI.SetActive(true);
-        Time.timeScale = SlowdownFactor;
-        Time.fixedDeltaTime = Time.timeScale * .02f;
-        GameRunning = false;
-        MController.enabled = false;
+        SlowDownTime();
     }
 
     public void Resume() {
         PauseMenuUI.SetActive(false);
+        RestoreTime();
+    }
+
+    public void Retry() {
+        RestoreTime();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void Menu() {
+        RestoreTime();
+        SceneManager.LoadScene("LevelSelector");
+    }
+
+    void SlowDownTime() {
+        if(mouseController == null)
+            mouseController = FindObjectOfType(typeof(MouseController)) as MouseController;
+        Time.timeScale = SlowdownFactor;
+        Time.fixedDeltaTime = Time.timeScale * .02f;
+        GameRunning = false;
+        mouseController.enabled = false;
+    }
+    void RestoreTime() {
+        if(mouseController == null)
+            mouseController = FindObjectOfType(typeof(MouseController)) as MouseController;
         Time.timeScale = 1f;
         Time.fixedDeltaTime = .02f;
         GameRunning = true;
-        MController.enabled = true;
+        mouseController.enabled = true;
     }
 }
