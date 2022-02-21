@@ -7,6 +7,7 @@ public class WindTurbine : PoweredDevice
     [SerializeField] BoxCollider2D m_triggerCollider;
     [SerializeField] bool m_direction = true;
     [SerializeField] float m_power;
+    AudioSource m_windSfx;
 
     Animator m_animator;
     ParticleSystem m_particle;
@@ -15,6 +16,7 @@ public class WindTurbine : PoweredDevice
     void Start() {
         m_particle = GetComponentInChildren<ParticleSystem>();
         m_animator = GetComponent<Animator>();
+        m_windSfx = GetComponent<AudioSource>();
     }
     void Update() {
         if (!m_powered) return;
@@ -25,11 +27,9 @@ public class WindTurbine : PoweredDevice
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-
         if (collision.transform.CompareTag("Interactable")) {
             m_bodies.Add(collision.GetComponent<Rigidbody2D>());
         }
-           
     }
 
     void OnTriggerExit2D(Collider2D collision) {
@@ -40,12 +40,14 @@ public class WindTurbine : PoweredDevice
         m_powered = true;
         m_animator.SetBool("Spinning", true);
         m_particle.Play();
+        m_windSfx.Play();
     }
 
     public override void PowerOff() {
         m_powered = false;
         m_animator.SetBool("Spinning", false);
         m_particle.Stop();
+        m_windSfx.Stop();
     }
 
 }
