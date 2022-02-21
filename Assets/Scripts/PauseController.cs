@@ -42,6 +42,10 @@ public class PauseController : MonoBehaviour
         SceneManager.LoadScene("LevelSelector");
     }
 
+    public void Quit() {
+        Application.Quit();
+    }
+
     void SlowDownTime() {
         if(mouseController == null)
             mouseController = FindObjectOfType(typeof(MouseController)) as MouseController;
