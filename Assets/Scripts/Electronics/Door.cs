@@ -26,8 +26,7 @@ public class Door : PoweredDevice
             m_closedCollider[i].enabled = true;
         }
 
-        if (m_doorSfx) m_doorSfx.Play();
-
+        AudioManager.Instance.triggerAudio(0);
     }
 
     public override void PowerOff() {
@@ -38,7 +37,7 @@ public class Door : PoweredDevice
         for (int i = 0; i < m_closedCollider.Length; i++) {
             m_closedCollider[i].enabled = false;
         }
-        
-        if (m_doorSfx) m_doorSfx.Play();
+
+        AudioManager.Instance.triggerAudio(0);
     }
 }

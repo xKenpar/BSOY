@@ -52,7 +52,7 @@ public class LevelSelector : PoweredDevice
             int index = Int32.Parse(t.name);
 
             if (currentLevel == index) break;
-            Debug.Log(t.name);
+
             t.gameObject.GetComponent<Door>().PowerOn();
         }
     }
