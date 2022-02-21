@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public int currentLevel = 15;
-    int maxLevel = 11;
+    int maxLevel = 16;
 
     static SceneController instance = null;
     

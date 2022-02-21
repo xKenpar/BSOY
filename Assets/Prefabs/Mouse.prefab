@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6371331168966286941}
   m_Layer: 8
   m_Name: Mouse
-  m_TagString: Untagged
+  m_TagString: Mouse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

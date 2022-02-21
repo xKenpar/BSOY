@@ -17,7 +17,7 @@ public class PressurePlate : MonoBehaviour
         m_renderer = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D collision) {
-        if (!collision.CompareTag("Interactable") || collision.isTrigger) return;
+        if ((!collision.CompareTag("Interactable") && !collision.CompareTag("Fist")) || collision.isTrigger) return;
 
         if (m_triggerCount == 0) {
             m_powerSource.PowerOn();
@@ -28,7 +28,7 @@ public class PressurePlate : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision) {
 
-        if (!collision.CompareTag("Interactable") || collision.isTrigger) return;
+        if ((!collision.CompareTag("Interactable") && !collision.CompareTag("Fist")) || collision.isTrigger) return;
 
         if (m_triggerCount == 1) {
             m_powerSource.PowerOff();

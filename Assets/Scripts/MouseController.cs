@@ -47,7 +47,7 @@ public class MouseController : MonoBehaviour
 
     void Update() {
 #if UNITY_EDITOR
-        m_rigidbody.MovePosition(Vector3.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 5));
+        m_rigidbody.MovePosition(Vector3.MoveTowards(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), 100));
 #else
         Point cursorPos = new Point();
         GetCursorPos(out cursorPos);
@@ -63,7 +63,7 @@ public class MouseController : MonoBehaviour
             m_cursorParticleTimer -= Time.deltaTime;
 
         if(!IsHolding && Input.GetMouseButtonDown(1)){
-            gameObject.tag = "Interactable";
+            gameObject.tag = "Fist";
             gameObject.layer = 9;
             m_spriteRenderer.sprite = StrongSprite;
             foreach(var pressurePlate in m_pressurePlates){
@@ -71,7 +71,7 @@ public class MouseController : MonoBehaviour
             }
         } else if(!IsHolding && Input.GetMouseButtonUp(1)){
             if(gameObject.layer == 9){
-                gameObject.tag = "Untagged";
+                gameObject.tag = "Mouse";
                 gameObject.layer = 8;
                 m_spriteRenderer.sprite = IdleSprite;
                 foreach(var pressurePlate in m_pressurePlates){
