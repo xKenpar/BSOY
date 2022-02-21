@@ -122,6 +122,7 @@ public class TextBoxManager : MonoBehaviour
             } else{
                 for(int characterCount = 0;characterCount < parsedText[i].Length;characterCount++){
                     TextMesh.maxVisibleCharacters++;
+                    AudioManager.Instance.triggerAudio(3);
                     yield return StoppableWaitForSeconds(1 / m_speed);
                 }
             }
