@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6257264712332325511}
   - component: {fileID: 6257264712332325508}
   - component: {fileID: 6257264712332325509}
+  - component: {fileID: 3698453889351644952}
   m_Layer: 0
   m_Name: Turbine
   m_TagString: Untagged
@@ -145,6 +146,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &3698453889351644952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257264712332325498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 605be8f1f2eb68a44a43048151b3a63b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3408814924698289125
 PrefabInstance:
   m_ObjectHideFlags: 0

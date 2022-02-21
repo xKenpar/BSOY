@@ -105,6 +105,10 @@ SpriteAtlas:
   - {fileID: 1024139073827670984, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
   - {fileID: -7268535963250065043, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
   - {fileID: 3612006311581673079, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
+  - {fileID: -2339540703845950200, guid: c1a59dcb316bb7744bc0c336d5ea05ba, type: 3}
+  - {fileID: 8436031621633529215, guid: c1a59dcb316bb7744bc0c336d5ea05ba, type: 3}
+  - {fileID: 6429062682199628584, guid: c1a59dcb316bb7744bc0c336d5ea05ba, type: 3}
+  - {fileID: -8675828671395178022, guid: c1a59dcb316bb7744bc0c336d5ea05ba, type: 3}
   - {fileID: 21300000, guid: 8b9d894c9debf3147b5aa35ba684be67, type: 3}
   - {fileID: -8133542023967865937, guid: 35e7e64d981edd248b58089c79bbe812, type: 3}
   - {fileID: -5127468713709953168, guid: 35e7e64d981edd248b58089c79bbe812, type: 3}
@@ -200,6 +204,10 @@ SpriteAtlas:
   - MagaraCursor_0
   - MagaraCursor_3
   - MagaraCursor_2
+  - MagaraWindTA_0
+  - MagaraWindTA_1
+  - MagaraWindTA_2
+  - MagaraWindTA_3
   - MagaraKrkter
   - MagaraTileMap_14
   - MagaraTileMap_15

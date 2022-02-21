@@ -8,11 +8,13 @@ public class WindTurbine : PoweredDevice
     [SerializeField] bool m_direction = true;
     [SerializeField] float m_power;
 
+    Animator m_animator;
     ParticleSystem m_particle;
     List<Rigidbody2D> m_bodies = new List<Rigidbody2D>();
 
     void Start() {
         m_particle = GetComponentInChildren<ParticleSystem>();
+        m_animator = GetComponent<Animator>();
     }
     void Update() {
         if (!m_powered) return;
@@ -25,7 +27,6 @@ public class WindTurbine : PoweredDevice
     void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.transform.CompareTag("Interactable")) {
-            Debug.Log(collision.transform.name);
             m_bodies.Add(collision.GetComponent<Rigidbody2D>());
         }
            
@@ -37,11 +38,13 @@ public class WindTurbine : PoweredDevice
 
     public override void PowerOn() {
         m_powered = true;
+        m_animator.SetBool("Spinning", true);
         m_particle.Play();
     }
 
     public override void PowerOff() {
         m_powered = false;
+        m_animator.SetBool("Spinning", false);
         m_particle.Stop();
     }
 
