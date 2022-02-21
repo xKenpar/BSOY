@@ -51,8 +51,7 @@ public class LevelSelector : PoweredDevice
         foreach (Transform t in DoorsParent) {
             int index = Int32.Parse(t.name);
 
-            if (currentLevel == index) break;
-            Debug.Log(t.name);
+            if (currentLevel < index) break;
             t.gameObject.GetComponent<Door>().PowerOn();
         }
     }

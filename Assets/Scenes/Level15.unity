@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts:
-  - "<char>Bu deli\u011Fin \xFCst\xFCnden z\u0131plam\u0131yorum."
+  - "<char>Bu deli\u011Fin \xFCst\xFCnden z\u0131plamicam."
   TextTriggers: []
 --- !u!4 &1012969774
 Transform:
