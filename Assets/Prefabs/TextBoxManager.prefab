@@ -59,6 +59,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   TextBox: {fileID: 3661987515756414225}
+  TextBoxImage: {fileID: 6681452223659967858}
+  NarratorTextBG: {fileID: 0}
+  CharTextBG: {fileID: 0}
   TextMesh: {fileID: 3640381765390729632}
 --- !u!1 &2351874023404262519
 GameObject:

@@ -14,6 +14,9 @@ public class TextBoxManager : MonoBehaviour
     public UnityEvent<int> OnTextTrigger = new UnityEvent<int>();
 
     [SerializeField] GameObject TextBox;
+    [SerializeField] Image TextBoxImage;
+    [SerializeField] Sprite NarratorTextBG;
+    [SerializeField] Sprite CharTextBG;
     [SerializeField] TextMeshProUGUI TextMesh;
 
     public static TextBoxManager Instance
@@ -99,6 +102,11 @@ public class TextBoxManager : MonoBehaviour
             }
         }
 
+        if(parsedText.Length > 1 && parsedText[1] == "char"){
+            TextBoxImage.sprite = CharTextBG;
+        } else {
+            TextBoxImage.sprite = NarratorTextBG;
+        }
         TextMesh.SetText(text);
         TextMesh.maxVisibleCharacters = 0;
 
@@ -122,7 +130,7 @@ public class TextBoxManager : MonoBehaviour
     }
 
     bool IsCustomTag(string tag) {
-        return StringStartsWith(tag, "speed=") || StringStartsWith(tag, "trigger=");
+        return StringStartsWith(tag, "speed=") || StringStartsWith(tag, "trigger=") || StringStartsWith(tag, "char");
     }
 
     void EvaluateTag(string tag) {

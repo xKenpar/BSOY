@@ -20,7 +20,7 @@ public class InteractableManager : MonoBehaviour
         Vector2 worldPos = MouseController.MousePosition;
         if(MouseController.m_spriteRenderer == null)
             return;
-
+        
         if (Input.GetMouseButtonDown (0)) {
             Collider2D collider = Physics2D.OverlapPoint (worldPos, m_DragLayers);
             if (!collider) {
@@ -39,6 +39,7 @@ public class InteractableManager : MonoBehaviour
                 return;
 
             MouseController.m_spriteRenderer.sprite = m_clicked;
+            MouseController.IsHolding = true;
             m_targetJoint = body.gameObject.AddComponent<TargetJoint2D> ();
             m_targetJoint.dampingRatio = m_damping;
             m_targetJoint.frequency = m_frequency;
@@ -46,6 +47,7 @@ public class InteractableManager : MonoBehaviour
             m_targetJoint.anchor = m_targetJoint.transform.InverseTransformPoint (worldPos);
         } else if (Input.GetMouseButtonUp (0)) {
             MouseController.m_spriteRenderer.sprite = m_idle;
+            MouseController.IsHolding = false;
             Destroy (m_targetJoint);
             m_targetJoint = null;
             return;

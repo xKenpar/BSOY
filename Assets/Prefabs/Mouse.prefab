@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  IdleSprite: {fileID: 1024139073827670984, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
+  StrongSprite: {fileID: 2684423078740435348, guid: 0e9975ea3725abb43b3567e9bca7677f, type: 3}
   CursorParticle: {fileID: 4065780316005502064, guid: aa051234558051c468ad0751849ef39e, type: 3}
 --- !u!50 &8879661743579107475
 Rigidbody2D:

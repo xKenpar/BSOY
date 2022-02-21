@@ -17,11 +17,17 @@ public class MouseController : MonoBehaviour
     Camera m_mainCamera;
     Rigidbody2D m_rigidbody;
     public static SpriteRenderer m_spriteRenderer;
+    [SerializeField] Sprite IdleSprite;
+    [SerializeField] Sprite StrongSprite;
+
+    public static bool IsHolding;
 
     Vector2 m_cursorSetPoint;
 
     [SerializeField] ParticleSystem CursorParticle;
     float m_cursorParticleTimer = 0;
+
+    List<PressurePlate> m_pressurePlates = new List<PressurePlate>();
 
     void Start() {
         Cursor.lockState = CursorLockMode.None;
@@ -29,6 +35,7 @@ public class MouseController : MonoBehaviour
 
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        IsHolding = false;
         if(spawnPoint)
             transform.position = spawnPoint.position;
 
@@ -54,6 +61,25 @@ public class MouseController : MonoBehaviour
 
         if(m_cursorParticleTimer > 0)
             m_cursorParticleTimer -= Time.deltaTime;
+
+        if(!IsHolding && Input.GetMouseButtonDown(1)){
+            gameObject.tag = "Interactable";
+            gameObject.layer = 0;
+            m_spriteRenderer.sprite = StrongSprite;
+            foreach(var pressurePlate in m_pressurePlates){
+                pressurePlate.AddMouseTrigger();
+            }
+        } else if(!IsHolding && Input.GetMouseButtonUp(1)){
+            if(gameObject.layer == 0){
+                gameObject.tag = "Untagged";
+                gameObject.layer = 8;
+                m_spriteRenderer.sprite = IdleSprite;
+                foreach(var pressurePlate in m_pressurePlates){
+                    pressurePlate.RemoveMouseTrigger();
+                }
+            }
+        }
+        
     }
     void OnDisable() {
         Cursor.visible = true;
@@ -67,13 +93,27 @@ public class MouseController : MonoBehaviour
         m_spriteRenderer.enabled = true;
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.relativeVelocity.magnitude > 2){
+    void OnCollisionStay2D(Collision2D other) {
+        if(other.relativeVelocity.magnitude > 2){
             if(m_cursorParticleTimer <= 0){
-                Instantiate(CursorParticle,collision.contacts[0].point,Quaternion.identity);
+                Instantiate(CursorParticle,other.contacts[0].point,Quaternion.identity);
                 m_cursorParticleTimer = .2f;
             }
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        var script = other.GetComponent<PressurePlate>();
+        if(script){
+            m_pressurePlates.Add(script);  
+            Debug.Log("Added " + other.name);
+        }  
+    }
+    void OnTriggerExit2D(Collider2D other) {
+        var script = other.GetComponent<PressurePlate>();
+        if(script){
+            m_pressurePlates.Remove(script);
+            Debug.Log("Removed " + other.name);
+        }    
     }
 }

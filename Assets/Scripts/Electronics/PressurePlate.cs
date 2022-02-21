@@ -36,4 +36,20 @@ public class PressurePlate : MonoBehaviour
         }
         m_triggerCount--;
     }
+
+    public void AddMouseTrigger(){
+        if (m_triggerCount == 0) {
+            m_powerSource.PowerOn();
+            m_renderer.sprite = m_pressed;
+        }
+        m_triggerCount++;
+    }
+
+    public void RemoveMouseTrigger(){
+        if (m_triggerCount == 1) {
+            m_powerSource.PowerOff();
+            m_renderer.sprite = m_unPressed;
+        }
+        m_triggerCount--;
+    }
 }
