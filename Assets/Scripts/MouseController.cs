@@ -64,13 +64,13 @@ public class MouseController : MonoBehaviour
 
         if(!IsHolding && Input.GetMouseButtonDown(1)){
             gameObject.tag = "Interactable";
-            gameObject.layer = 0;
+            gameObject.layer = 9;
             m_spriteRenderer.sprite = StrongSprite;
             foreach(var pressurePlate in m_pressurePlates){
                 pressurePlate.AddMouseTrigger();
             }
         } else if(!IsHolding && Input.GetMouseButtonUp(1)){
-            if(gameObject.layer == 0){
+            if(gameObject.layer == 9){
                 gameObject.tag = "Untagged";
                 gameObject.layer = 8;
                 m_spriteRenderer.sprite = IdleSprite;
