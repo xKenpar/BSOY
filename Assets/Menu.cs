@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
 
     void Start() {
         SlowDownTime();    
-        if()
+        
     }
 
     public void NewGame() {
