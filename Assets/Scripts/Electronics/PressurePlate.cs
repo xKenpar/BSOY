@@ -22,6 +22,7 @@ public class PressurePlate : MonoBehaviour
         if (m_triggerCount == 0) {
             m_powerSource.PowerOn();
             m_renderer.sprite = m_pressed;
+            AudioManager.Instance.triggerAudio(1);
         }
         m_triggerCount++;
     }
@@ -33,6 +34,7 @@ public class PressurePlate : MonoBehaviour
         if (m_triggerCount == 1) {
             m_powerSource.PowerOff();
             m_renderer.sprite = m_unPressed;
+            AudioManager.Instance.triggerAudio(1);
         }
         m_triggerCount--;
     }
@@ -41,6 +43,7 @@ public class PressurePlate : MonoBehaviour
         if (m_triggerCount == 0) {
             m_powerSource.PowerOn();
             m_renderer.sprite = m_pressed;
+            AudioManager.Instance.triggerAudio(1);
         }
         m_triggerCount++;
     }
@@ -49,6 +52,7 @@ public class PressurePlate : MonoBehaviour
         if (m_triggerCount == 1) {
             m_powerSource.PowerOff();
             m_renderer.sprite = m_unPressed;
+            AudioManager.Instance.triggerAudio(1);
         }
         m_triggerCount--;
     }

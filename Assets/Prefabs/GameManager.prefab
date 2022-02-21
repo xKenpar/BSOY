@@ -85,7 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_audios:
   - {fileID: 8300000, guid: 2e0967e9253d1ad49b200c340fbc4d4e, type: 3}
-  - {fileID: 8300000, guid: b049f4ffd91ce5648b7a411cae5e13e7, type: 3}
+  - {fileID: 8300000, guid: dc10c381ab07b53489d8ee96586f0e67, type: 3}
+  - {fileID: 8300000, guid: 4519ae1078d6fa84992e74b40c1fd04d, type: 3}
 --- !u!1 &7231553163857520865
 GameObject:
   m_ObjectHideFlags: 0
