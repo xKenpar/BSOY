@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 1400245199}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_direction
@@ -548,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 1400245199}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_direction
@@ -625,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 332012161}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
@@ -1056,7 +1056,7 @@ PrefabInstance:
       objectReference: {fileID: 332012161}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
@@ -4086,7 +4086,7 @@ PrefabInstance:
       objectReference: {fileID: 332012161}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
@@ -4225,7 +4225,7 @@ PrefabInstance:
       objectReference: {fileID: 1400245199}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_power
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6257264712332325511, guid: da709481eb891f448af7ef70e2ea4ae5, type: 3}
       propertyPath: m_direction
