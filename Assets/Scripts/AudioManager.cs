@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioClip[] m_audios;
     List<AudioSource> m_sources = new List<AudioSource>();
+    [SerializeField] float m_volume = 0.3f;
 
     static AudioManager instance = null;
 
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
             m_sources.Add(temp);
             temp.playOnAwake = false;
             temp.clip = m_audios[i];
+            temp.volume = m_volume;
         }
     }
     public void triggerAudio(int index) {
