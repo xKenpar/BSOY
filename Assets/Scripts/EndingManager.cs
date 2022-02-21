@@ -7,6 +7,12 @@ public class EndingManager : MonoBehaviour
     public Rigidbody2D m_character;
     bool m_walking = false;
 
+    IEnumerator end(float delay) {
+
+        yield return new WaitForSeconds(delay);
+
+        SceneController.Instance.NextLevel();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +20,8 @@ public class EndingManager : MonoBehaviour
     }
 
     public void StartWalking() {
-        //m_character.GetComponent<Animator>().SetTrigger("Walk");
+        m_character.GetComponent<Animator>().SetTrigger("Walk");
         m_walking = true;
+        StartCoroutine(end(10f));
     }
 }
