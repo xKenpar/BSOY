@@ -5201,7 +5201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717064, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: currentLevel
-      value: 15
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717065, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: m_Name

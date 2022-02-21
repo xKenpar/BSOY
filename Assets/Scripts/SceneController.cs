@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public int currentLevel = 15;
-    int maxLevel = 15;
+    int maxLevel = 11;
 
     static SceneController instance = null;
     
@@ -25,7 +25,7 @@ public class SceneController : MonoBehaviour
     public void NextLevel(){
         if(currentLevel == maxLevel) {
             LoadLevel("levelSelector");
-        }
+        }else
 
         LoadLevel("Level" + (currentLevel + 1));
     }

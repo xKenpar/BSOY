@@ -49,6 +49,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 91ee5dc06feb34947aff935423ee5004, type: 3}
   - {fileID: -8133542023967865937, guid: 74fa2d32ec258bf4398e5b025bdb1d41, type: 3}
   - {fileID: -5127468713709953168, guid: 74fa2d32ec258bf4398e5b025bdb1d41, type: 3}
   - {fileID: 8853843037036945123, guid: 74fa2d32ec258bf4398e5b025bdb1d41, type: 3}
@@ -100,6 +101,7 @@ SpriteAtlas:
   - {fileID: -7140493762979212182, guid: 1aa4f4671061c064e989d931c57536f3, type: 3}
   - {fileID: -3136059681587683742, guid: 1aa4f4671061c064e989d931c57536f3, type: 3}
   - {fileID: 21300000, guid: 98c3f498f2b8d9b42b62aef470b5b994, type: 3}
+  - {fileID: 21300000, guid: 3df46ae8e4d3c7f4cbda213162e01715, type: 3}
   - {fileID: -5996521422382815295, guid: 465ae4caa05747f49849dd19b25971f7, type: 3}
   - {fileID: -1140977076363168694, guid: 465ae4caa05747f49849dd19b25971f7, type: 3}
   - {fileID: -2144749068271564326, guid: 465ae4caa05747f49849dd19b25971f7, type: 3}
@@ -152,7 +154,9 @@ SpriteAtlas:
   - {fileID: -7964483837472643328, guid: 35e7e64d981edd248b58089c79bbe812, type: 3}
   - {fileID: -6674717194384340435, guid: 35e7e64d981edd248b58089c79bbe812, type: 3}
   - {fileID: -6643560722585004530, guid: 35e7e64d981edd248b58089c79bbe812, type: 3}
+  - {fileID: 21300000, guid: d559e80ee41f67b43a1b617d4f186321, type: 3}
   m_PackedSpriteNamesToIndex:
+  - MagaraMonaKter
   - MagaraTileMap_14
   - MagaraTileMap_15
   - MagaraTileMap_16
@@ -204,6 +208,7 @@ SpriteAtlas:
   - MagaraKapi3Alt_0
   - MagaraKapi3Alt_1
   - MagaraKterDlog
+  - MagaraSquidwardKter
   - MagaraKapi7_4
   - MagaraKapi7_3
   - MagaraKapi7_2
@@ -256,6 +261,7 @@ SpriteAtlas:
   - MagaraTileMap_20
   - MagaraTileMap_23
   - MagaraTileMap_22
+  - MagaraJotaroKter
   m_RenderDataMap: {}
   m_Tag: Atlas
   m_IsVariant: 0
