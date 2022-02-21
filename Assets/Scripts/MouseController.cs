@@ -54,7 +54,7 @@ public class MouseController : MonoBehaviour
 
         Vector3 mouseMovementVector = m_mainCamera.ScreenToWorldPoint(new Vector2(cursorPos.X,cursorPos.Y))-m_mainCamera.ScreenToWorldPoint(m_cursorSetPoint);
         mouseMovementVector *= new Vector2(1,-1);
-        m_rigidbody.MovePosition(transform.position + mouseMovementVector);
+        m_rigidbody.MovePosition(transform.position + mouseMovementVector*1.2f);
         SetCursorPos((int)m_cursorSetPoint.x,(int)m_cursorSetPoint.y);
 #endif
         MousePosition = transform.position;
@@ -106,14 +106,12 @@ public class MouseController : MonoBehaviour
         var script = other.GetComponent<PressurePlate>();
         if(script){
             m_pressurePlates.Add(script);  
-            Debug.Log("Added " + other.name);
         }  
     }
     void OnTriggerExit2D(Collider2D other) {
         var script = other.GetComponent<PressurePlate>();
         if(script){
             m_pressurePlates.Remove(script);
-            Debug.Log("Removed " + other.name);
         }    
     }
 }

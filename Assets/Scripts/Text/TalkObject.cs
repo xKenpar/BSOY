@@ -31,7 +31,6 @@ public class TalkObject : MonoBehaviour
     }
     void OnTextTrigger(int i){
         if(TextTriggers.Count > i){
-            Debug.Log("nice");
             TextTriggers[i].Invoke();
         }
     }

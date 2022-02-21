@@ -16,7 +16,8 @@ public class Door : PoweredDevice
     }
     public override void PowerOn() {
         m_powered = true;
-        m_animator.SetTrigger("Close");
+        m_animator.SetBool("Close",true);
+        m_animator.SetBool("Open",false);
         m_openedCollider.enabled = false;
         for (int i = 0; i < m_closedCollider.Length; i++) {
             m_closedCollider[i].enabled = true;
@@ -25,7 +26,8 @@ public class Door : PoweredDevice
 
     public override void PowerOff() {
         m_powered = false;
-        m_animator.SetTrigger("Open");
+        m_animator.SetBool("Close",false);
+        m_animator.SetBool("Open",true);
         m_openedCollider.enabled = true;
         for (int i = 0; i < m_closedCollider.Length; i++) {
             m_closedCollider[i].enabled = false;
