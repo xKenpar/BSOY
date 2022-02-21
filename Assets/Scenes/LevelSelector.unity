@@ -950,10 +950,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5000611825837479895, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
-      propertyPath: m_volume
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 5907115230613717061, guid: 4c1208c57986fad4d9d79601b512a9a1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7584,6 +7580,10 @@ PrefabInstance:
     - target: {fileID: 4127541985389825457, guid: 30eef419705475b4e955311915078d48, type: 3}
       propertyPath: m_startOpened
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364043721471391934, guid: 30eef419705475b4e955311915078d48, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7943867670022891394, guid: 30eef419705475b4e955311915078d48, type: 3}
       propertyPath: m_RootOrder
